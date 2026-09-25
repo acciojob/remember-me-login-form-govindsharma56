@@ -4,11 +4,11 @@ let existingbtn = document.querySelector('#existing');
 let savedUser = localStorage.getItem('userdata');
 
 if (savedUser) {
-    let user = JSON.parse(savedUser);
-
-    if (user.username) {
-        existingbtn.style.display = 'block';
-    }
+    try { let user = JSON.parse(savedUser); 
+		 if (user.username)
+		 { existingbtn.style.display = 'block'; }
+		} catch (error) 
+	{ existingbtn.style.display = 'none'; }
 }
 
 existingbtn.addEventListener('click', () => {
