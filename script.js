@@ -1,7 +1,7 @@
 //your JS code here. If required.
 let existingbtn = document.querySelector('#existing');
 let savedUser = localStorage.getItem('userdata');
-if (savedUser) {
+if (savedUser.name) {
     existingbtn.style.display = 'block';
 }
 existingbtn.addEventListener('click', () => {
